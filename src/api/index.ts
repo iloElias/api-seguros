@@ -1,16 +1,11 @@
 import express from 'express';
 
-import MessageResponse from '../interfaces/MessageResponse';
+import users from './users';
 import credit from './credit';
 
 const router = express.Router();
 
-router.get<{}, MessageResponse>('/api/credit', (req, res) => {
-  res.json({
-    message: 'API SEGUROS',
-  });
-});
-
-router.use('/api/credit', credit);
+router.use('/credit', credit);
+router.use('/users', users);
 
 export default router;
