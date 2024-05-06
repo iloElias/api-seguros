@@ -2,10 +2,13 @@ import express from 'express';
 import { readCSV } from '../utils/readCSV';
 import { InsuranceData } from '../interfaces/InsuranceData';
 
+import path from 'path';
+const csvFilePath = path.join(__dirname, '../../data/car_insurance_claim.csv');
+
 const router = express.Router();
 
 router.get('/:id', (req, res) => {
-  const data: InsuranceData[] = readCSV('data/car_insurance_claim.csv');
+  const data: InsuranceData[] = readCSV(csvFilePath);
   console.log('Total records loaded:', data.length);
 
   const userId = req.params.id;
