@@ -1,16 +1,16 @@
 import express from 'express';
 
 import MessageResponse from '../interfaces/MessageResponse';
-import emojis from './emojis';
+import credit from './credit';
 
 const router = express.Router();
 
 router.get<{}, MessageResponse>('/', (req, res) => {
   res.json({
-    message: 'API - 👋🌎🌍🌏',
+    message: 'API SEGUROS',
   });
 });
 
-router.use('/emojis', emojis);
+router.use('/credit', credit);
 
 export default router;
