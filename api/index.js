@@ -1,7 +1,7 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
-const creditScoreRoutes = require('./src/routes/creditScoreRoutes');
+const swaggerDocument = require('../swagger.json');
+const creditScoreRoutes = require('../src/routes/creditScoreRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
