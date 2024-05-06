@@ -5,12 +5,12 @@ import credit from './credit';
 
 const router = express.Router();
 
-router.get<{}, MessageResponse>('/', (req, res) => {
+router.get<{}, MessageResponse>('/api/credit', (req, res) => {
   res.json({
     message: 'API SEGUROS',
   });
 });
 
-router.use('/credit', credit);
+router.use('/api/credit', credit);
 
 export default router;

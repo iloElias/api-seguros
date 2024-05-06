@@ -7,7 +7,7 @@ const router = express.Router();
 
 type SearchResponse = InsuranceData[];
 
-router.post<{}, SearchResponse>('/search', (req, res) => {
+router.post<{}, SearchResponse>('/credit', (req, res) => {
   const data = readCSV('./data/car_insurance_claim.csv');
   const query: Partial<InsuranceData> = req.body;
   const results = searchData(data, query);

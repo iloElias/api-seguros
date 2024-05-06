@@ -1,5 +1,4 @@
 import request from 'supertest';
-
 import app from '../src/app';
 
 describe('app', () => {
@@ -19,7 +18,7 @@ describe('GET /', () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, {
-        message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
+        message: 'TESTE DE RESPOSTA',
       }, done);
   });
 });
