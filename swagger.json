@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Seguro de Veículos API",
+        "version": "1.0.0",
+        "description": "API para calcular CREDIT_SCORE para seguro de veículos"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/credit-score": {
+            "post": {
+                "summary": "Calcula o CREDIT_SCORE",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditScoreRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "CREDIT_SCORE calculado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "creditScore": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CreditScoreRequest": {
+                "type": "object",
+                "properties": {
+                    "age": {
+                        "type": "string"
+                    },
+                    "gender": {
+                        "type": "string"
+                    },
+                    "drivingExperience": {
+                        "type": "string"
+                    },
+                    "education": {
+                        "type": "string"
+                    },
+                    "income": {
+                        "type": "string"
+                    },
+                    "vehicleYear": {
+                        "type": "string"
+                    },
+                    "vehicleType": {
+                        "type": "string"
+                    },
+                    "annualMileage": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "age",
+                    "gender",
+                    "drivingExperience",
+                    "education",
+                    "income",
+                    "vehicleYear",
+                    "vehicleType",
+                    "annualMileage"
+                ]
+            }
+        }
+    }
+}
